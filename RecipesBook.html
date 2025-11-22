@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang ="en">
+<head>
+    <meta charset ="utf-8">
+    <title>Hungry&Broke - Recipes Book</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="filter-style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
+             <img src="hungry_and_broke_logo.png" alt="Hungry&Broke Logo">
+          </a>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="RecipesBook.html">Recipes Book</a></li>
+          <li><a href="Tips&Tricks.html"> Tips & Tricks</a></li>
+          <li><a href="Special Occasions.html">Special Occasions</a></li>
+        </ul>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="submit">Go</button>
+            </form>
+        </div>
+    </nav>
+
+    
+    <section class="third-hero-section">
+        <h1>Choose from thousands of recipes</h1>
+        <p>Appropriately integrate technically sound value with scalable infomediaries, negotiate sustainable meta-services.</p>
+    </section>
+
+    <div class="container">
+        <div class="filter-header">
+            <h2>Recipes</h2>
+            <button class="filter-btn" onclick="toggleFilters()">
+                <span>🔍</span> Filter recipes
+            </button>
+        </div>
+
+        <div class="active-filters" id="activeFilters">
+        </div>
+
+        <div class="recipe-grid">
+            <div class="recipe-card">
+                <img src="sesame-chicken-1.jpg" alt="Honey Sesame Chicken" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Honey Sesame Chicken</h3>
+                    <p>A crispy, bite-size chicken dish coated in a sweet and savory honey-soy glaze, topped with toasted sesame seeds and green onions.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 5.0</span>
+                        <span>⏱️ 45 mins</span>
+                        <span>👨‍🍳 Medium</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Asian</span>
+                        <span class="tag">Dinner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Fresh Salad" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Mediterranean Quinoa Bowl</h3>
+                    <p>A healthy and colorful bowl featuring quinoa, fresh vegetables, feta cheese, and a tangy lemon dressing.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 4.8</span>
+                        <span>⏱️ 25 mins</span>
+                        <span>👨‍🍳 Easy</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Mediterranean</span>
+                        <span class="tag">Lunch</span>
+                        <span class="tag">Vegetarian</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Pizza" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Classic Margherita Pizza</h3>
+                    <p>Authentic Italian pizza with fresh mozzarella, San Marzano tomatoes, and fresh basil on a perfectly crispy crust.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 4.9</span>
+                        <span>⏱️ 60 mins</span>
+                        <span>👨‍🍳 Medium</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Italian</span>
+                        <span class="tag">Dinner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500" alt="Pancakes" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Fluffy Buttermilk Pancakes</h3>
+                    <p>Light and fluffy pancakes perfect for weekend breakfast. Serve with maple syrup and fresh berries.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 5.0</span>
+                        <span>⏱️ 20 mins</span>
+                        <span>👨‍🍳 Easy</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">American</span>
+                        <span class="tag">Breakfast</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500" alt="Tacos" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Spicy Fish Tacos</h3>
+                    <p>Crispy beer-battered fish topped with crunchy cabbage slaw and spicy chipotle mayo in warm tortillas.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 4.7</span>
+                        <span>⏱️ 35 mins</span>
+                        <span>👨‍🍳 Medium</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Mexican</span>
+                        <span class="tag">Dinner</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recipe-card">
+                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500" alt="Dessert" class="recipe-image">
+                <div class="recipe-info">
+                    <h3>Chocolate Lava Cake</h3>
+                    <p>Decadent individual chocolate cakes with a molten center. Perfect for impressing dinner guests.</p>
+                    <div class="recipe-meta">
+                        <span>⭐ 5.0</span>
+                        <span>⏱️ 30 mins</span>
+                        <span>👨‍🍳 Hard</span>
+                    </div>
+                    <div class="recipe-tags">
+                        <span class="tag">Dessert</span>
+                        <span class="tag">American</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+            <small>
+                <i>
+                    Copyright &copy; 2025 Hungry&Broke
+                </i>
+            </small>
+        </footer>  
+</body>
+</html>
