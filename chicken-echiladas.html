@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+     <meta charset ="utf-8">
+     <title> Chicken Echiladas-Hungry&Broke  </title>
+     <link rel="stylesheet" href="style.css">
+     <style>
+         *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body{
+            font-family: 'Segoe UI', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #333;
+            color: #333
+        }
+
+        h3{
+            color:#000
+        }
+        .back-buttom{
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #eb8b3d;
+            color: #000;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 2rem;
+            transition: 0.3s;
+        }
+
+        .back-button:hover{
+            background-color:#f9b781
+        }
+
+        .recipe-container{
+            max-width: 1100px;
+            margin: 2rem auto;
+            background: white;
+            padding: 3rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1)
+        }
+
+        .section-header{
+            text-align: center;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+        .section-header:before,
+        .section-header:after{
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 2px;
+            background: #333;
+        }
+
+        .section-header:before{
+            left:0;
+        }
+
+        .section-header:after{
+            right: 0;
+        }
+
+        .recipe-title{
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 300;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            padding-bottom: 2rem;
+            border-bottom: 3px solid #333
+        }
+
+        .quick-stats{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: 3rem 0;
+            padding: 2rem 0;
+            border-bottom: 3px solid #333;
+            border-top: 3px solid #333;
+        }
+
+      .stat-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            flex: 1;
+      }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            color: #888;
+            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: center;
+            height: 2.5rem;
+            display: flex;
+        }
+
+       .stat-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .stat-label{
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-value{
+            font-size: 1.3rem;
+            color: #333;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .content-grid{
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 3rem;
+            margin-top: 3rem;
+            align-items:start;
+        }
+
+        .sidebar{
+            background:#e8e4db;
+            padding: 2rem;
+            height:fit-content;
+        }
+
+        .sidebar-section{
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-title{
+            font-size: 1.5rem;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #333;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .sidebar-text{
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .nutrition-facts{
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .main-content{
+            padding: 1rem 2rem;
+        }
+
+        .ingredients-box{
+            background: #f5f5f5;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-left: 4px solid #333;
+        }
+
+        .ingredients-title{
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color:#000
+        }
+
+        .ingredients-list{
+            list-style: none;
+            line-height: 2;
+        }
+
+        .ingredients-list li:before{
+            content: "• ";
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .directions-list{
+            list-style: decimal;
+            padding-left: 1.5rem;
+            line-height: 1.9;
+            font-size: 0.95rem;
+        }
+
+        .directions-list li{
+            margin-bottom: 1.5rem;
+        }
+
+        .recipe-image{
+            width: 100%;
+            margin-top: 2rem;
+            border-radius: 8px;
+            max-height: 300px;
+            object-fit: cover;
+        }
+
+        .footer-text{
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 3px solid #333;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        footer{
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media(max-width: 968px){
+            .content-grid{
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .recipe-title{
+                font-size: 2rem;
+            }
+
+            .quick-stats{
+                flex-wrap: wrap;
+                gap: 2rem;
+            }
+
+            .stat-item{
+                flex-basis: 45%;
+            }
+
+            .recipe-container{
+                padding: 2rem 1.5rem;
+            }
+
+            .main-content{
+                padding: 0;
+            }
+        }
+
+        @media(max-width: 768px){
+            .recipe-title{
+                font-size: 1.5rem;
+                letter-spacing: 2px;
+            }
+
+            .quick-stats{
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .stat-item{
+                flex-basis: 100%;
+            }
+
+            .stat-icon{
+                font-size: 2rem;
+                height: 2rem;
+            }
+
+            .stat-label{
+                font-size: 0.65rem;
+            }
+
+            .stat-value{
+                font-size: 1.1rem;
+            }
+
+            .sidebar{
+                padding: 1.5rem;
+            }
+
+            .sidebar-title{
+                font-size: 1.2rem;
+            }
+
+            .ingredients-box{
+                padding: 1.5rem;
+            }
+
+            .recipe-container{
+                padding: 1.5rem 1rem;
+                margin: 1rem auto;
+            }
+
+            .back-buttom{
+                margin: 1rem;
+                padding: 0.6rem 1.5rem;
+                font-size: 0.9rem;
+            }
+
+            button{
+                margin: 1rem 1rem 1rem 0 !important;
+                padding: 0.5rem 1.2rem;
+                font-size: 0.85rem;
+            }
+        }
+
+        @media(max-width: 480px){
+            .recipe-title{
+                font-size: 1.2rem;
+                letter-spacing: 1px;
+                padding-bottom: 1rem;
+            }
+
+            .section-header{
+                font-size: 0.75rem;
+            }
+
+            .section-header:before,
+            .section-header:after{
+                width: 20%;
+            }
+
+            .quick-stats{
+                padding: 1.5rem 0;
+                gap: 1rem;
+            }
+
+            .sidebar-text{
+                font-size: 0.85rem;
+                line-height: 1.6;
+            }
+
+            .nutrition-facts{
+                font-size: 0.8rem;
+            }
+
+            .ingredients-list{
+                font-size: 0.9rem;
+                line-height: 1.8;
+            }
+
+            .directions-list{
+                font-size: 0.9rem;
+                line-height: 1.7;
+            }
+
+            .directions-list li{
+                margin-bottom: 1rem;
+            }
+
+            .recipe-container{
+                padding: 1rem 0.75rem;
+            }
+
+            .back-buttom{
+                font-size: 0.85rem;
+                padding: 0.5rem 1.2rem;
+            }
+        }
+        @media print {
+            .navbar,
+            .back-button,
+            .back-buttom,
+            button,
+            .rating-section,
+            .comments-section {
+                display: none !important;
+            }
+
+            body {
+                background-color: white;
+            }
+
+            .recipe-container {
+                box-shadow: none;
+                padding: 1rem;
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .section-header:before,
+            .section-header:after {
+                background: #000;
+            }
+
+            .recipe-title {
+                border-bottom: 2px solid #000;
+                page-break-after: avoid;
+            }
+
+            .quick-stats {
+                border-top: 2px solid #000;
+                border-bottom: 2px solid #000;
+                page-break-inside: avoid;
+            }
+
+            .sidebar {
+                background: #f5f5f5;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+
+            .sidebar-title {
+                page-break-after: avoid;
+            }
+
+            .sidebar-section,
+            .ingredients-box,
+            .stat-item {
+                page-break-inside: avoid;
+            }
+
+            .directions-list li {
+                page-break-inside: avoid;
+            }
+
+            .recipe-image {
+                max-height: 400px;
+                page-break-before: avoid;
+            }
+
+            footer {
+                display: none;
+            }
+
+            .content-grid {
+                grid-template-columns: 300px 1fr;
+                gap: 2rem;
+            }
+
+            .stat-icon,
+            .stat-label,
+            .stat-value {
+                color: #333 !important;
+            }
+
+            .ingredients-box {
+                border-left: 3px solid #000;
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+        .rating-section {
+    border: 2px solid #eb8b3d;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    background: #fff9f5;
+}
+
+.rating-header {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.rating-header h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.average-rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 0.8rem;
+}
+
+.rating-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #eb8b3d;
+}
+
+.stars-display {
+    font-size: 1.8rem;
+    color: #ffd700;
+}
+
+.total-ratings {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.rate-recipe {
+    text-align: center;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.rate-recipe h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.star-rating {
+    display: inline-flex;
+    gap: 0.5rem;
+    cursor: pointer;
+}
+
+.star {
+    font-size: 2rem;
+    color: #ddd;
+    transition: color 0.2s;
+    cursor: pointer;
+}
+
+.star:hover,
+.star.active {
+    color: #ffd700;
+}
+
+.rating-submitted {
+    color: #28a745;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+/* Comments Section */
+.comments-section {
+    margin-top: 2rem;
+    border-top: 3px solid #333;
+    padding-top: 1.5rem;
+}
+
+.comments-header {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.add-comment {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+}
+
+.add-comment h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #333;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    color: #333;
+    font-size: 0.95rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #eb8b3d;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.submit-btn {
+    background: #eb8b3d;
+    color: white;
+    padding: 0.7rem 1.8rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.submit-btn:hover {
+    background: #d97a2e;
+}
+
+.comments-list {
+    margin-top: 1.5rem;
+}
+
+.comment {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1.2rem;
+    margin-bottom: 1.2rem;
+    transition: box-shadow 0.3s;
+}
+
+.comment:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.comment-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #333;
+    font-size: 1rem;
+}
+
+.comment-date {
+    color: #999;
+    font-size: 0.85rem;
+}
+
+.comment-rating {
+    color: #ffd700;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.comment-text {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.no-comments {
+    text-align: center;
+    color: #999;
+    font-style: italic;
+    padding: 1.5rem;
+}
+
+@media (max-width: 768px) {
+    .rating-section {
+        padding: 1rem;
+    }
+
+    .rating-number {
+        font-size: 2rem;
+    }
+
+    .stars-display {
+        font-size: 1.5rem;
+    }
+
+    .star {
+        font-size: 1.8rem;
+    }
+
+    .add-comment {
+        padding: 1rem;
+    }
+
+    .comment {
+        padding: 1rem;
+    }
+
+    .comment-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+}
+     </style>
+    </head>
+    <body>
+            <nav class="navbar">
+          <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
+             <img src="hungry_and_broke_logo.png" atl="Hungry&Broke Logo">
+          </a>
+        <ul>
+          <li><a href="index.html">Home</a></li> 
+          <li><a href="RecipesBook.html">Recipes Book</a></li>
+          <li><a href="Tips&Tricks.html"> Tips & Tricks</a></li>
+          <li><a href="Special Occasions.html">Special Occasions</a></li>
+        </ul>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="submit">Go</button>
+            </form>
+            <a href="signin.html" class="auth-btn">Sign In</a>
+        </div>
+    </nav>
+    <div style="max-width: 1100px; margin: 0 auto; padding: 0 2rem;">
+        <a href="RecipesBook.html" class="back-buttom">← Back to Recipes</a>
+        <button onclick="window.print()" style="float: right; padding: 0.6rem 1.5rem; background: #eb8b3d;
+        color: #000; border: none; border-radius: 5px; cursor: pointer; font-size: 0.9em; margin: 2rem 0;">
+         🖨️ Print Recipe
+        </button>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="recipe-container">
+        <div class="section-header">Cookbook Section</div>
+
+        <h1 class="recipe-title">Chicken Echiladas</h1>
+
+        <div class="quick-stats">
+            <div class="stat-item">
+                <div class="stat-icon">🍽️</div>
+                <div class="stat-label">Serves</div>
+                <div class="stat-value">6(12 enchiladas)</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🍳</div>
+                <div class="stat-label">Mathod</div>
+                <div class="stat-value">Over-baked</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">⏱️</div>
+               <div class="stat-label">Time</div>
+               <div class="stat-value">1 hour 15 minutes'</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">👨‍🍳</div>
+                <div class="stat-label">Difficulty</div>
+                <div class="stat-value">MEDIUM</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-icon">🔥</div>
+                <div class="stat-label">Calories</div>
+                <div class="stat-value">350-400kcal(2 enchiladas)</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="sidebar">
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Description</h3>
+                    <p class="sidebar-text">
+                        These delicious chicken enchiladas feature tender shredded chicken wrapper in soft corn
+                        tortillas, smothered in a rich enchilada sauce and topped with melted cheese. This classic
+                        Mexican comfort food is perfect for a family dinners and can be prepare ahead of time. The 
+                        combination og savory chicken, flavored sauce, and gooey cheese makes this dish irresistible.
+                    </p>
+                </div>
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title"> Tips</h3>
+                    <p class="sidebar-text">
+                       Use rotisserie chicken: Save time by using a store-bought rotisserie chicken. 
+                       One rotisserie chicken typically yields about 3 cups of shredded meat.
+                    </p>
+                    <p class="sidebar-text">
+                        Prevent soggy enchiladas: Don't oversoak the tortillas in sauce before rolling. 
+                        The sauce on top and bottom is enough to keep them moist.
+                    </p>
+                    <p class="sidebar-text">
+                        Warm those tortillas: This is crucial! Cold tortillas will crack when you try to roll them. 
+                        Warm tortillas are flexible and easy to work with.
+                    </p>
+                    <p class="sidebar-text">
+                       Make ahead: Assemble the enchiladas up to 24 hours in advance, cover with plastic wrap, and refrigerate.
+                        When ready to bake, add 10 extra minutes to the covered baking time. 
+                    </p>
+                    <p class="sidebar-text">
+                        Freeze for later: Assembled unbaked enchiladas freeze beautifully for up to 3 months. Wrap tightly in plastic wrap and foil.
+                         Bake from frozen at 350°F for 60-70 minutes covered, then 15 minutes uncovered.
+                    </p>
+                    <p class="sidebar-text">
+                        Sauce options: Red enchilada sauce has a mild chili flavor, while green sauce (salsa verde) is tangier and slightly spicier. 
+                        Choose based on your preference.
+                    </p>
+                    <p class="sidebar-text">
+                        Corn vs. flour tortillas: Corn tortillas are traditional and gluten-free but more prone to breaking. 
+                        Flour tortillas are easier to work with and less likely to crack.
+                    </p>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3 class="sidebar-title">Nutrition Facts(per serving, 2 enchiladas)</h3>
+                    <p class="nutrition-facts">
+                        <strong>Pre Serving:</strong> Protein 28g; Fat 18g; Saturated Fat: 9g; Carbohydrates 35g;
+                        Cholesterol 755mg; Sodium 850mg; Fiber 5g; Sugar 4g
+                    </p>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <img src="./chicken-enchiladas-1-12.jpg" alt="chicken-enchiladas" class="recipe-image" style="margin-top: 0;">
+                <div class="ingredients-box">
+                    <h3 class="ingredients-title">Ingredients</h3>
+                    <ul class="ingredients-list">
+                        <h3>For Chicken Filling:</h3>
+                        <li>3cups cooked shredded chciken (about 1.5lbs chicken breasts)</li>
+                        <li>1 cups sour cream</li>
+                        <li>2 cups shredded Mexican blend cheese (divided)</li>
+                        <li>1 can (4oz) dices green chiles</li>
+                        <li>1/2 tsp ground cumin</li>
+                        <li>1/2 tsp garlic powder</li>
+                        <h3>For the Echiladas:</h3>
+                        <li>12 corn or flour tortillas (6 inches)</li>
+                        <li>3 cups red or green echilada sauce (store-bought or homemade)</li>
+                        <li>1 tbsp vegetable oil or olive oil</li>
+                        <h3>For Toppings:</h3>
+                        <li>1 cups shredded Mexican blend cheese</li>
+                        <li> Fresh cilantro, chaopped</li>
+                        <li>Sliced green onions</li>
+                        <li>Additional sour cream</li>
+                        <li>Diced tomatoes (optional)</li>
+                        <li>Sliced jalapenos(optional)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 3rem;">
+            <h2 style="font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 1.5rem; text-align: center; font-weight: 600; color: #333;">Directions:</h2>
+            <ol class="directions-list" style="max-width: 900px; margin: 0 auto;">
+                <li> Preheat the oven: Preheat your oven to 350°F(175°C). Lightly grease a 9x13-inch baking
+                    dish with cooking spray or oil.
+                </li>
+                <li>Prepare the chicken: If you haven't already cooked your chicken, poach chicken breasts in boiling water
+                    20-25 minutes until cooked through (internal temperature of 165°F). Let cook slighlty, then shred with 
+                    two forks. Alternatively, use rotissed chciken from the store.(25 minutes if cooked chciken)
+                </li>
+                <li>Making the Filling: In a large bowl, combine the shredded chciken, sour cream, 1 cup of shredded cheese, 
+                    diced green chiles, cumin, garlic powder, salt,pepper. Mix well until everything is evenly combined.
+                </li>
+                <li>Warm the tortillas: Heart tortillas in the microwave wrapped in a damp paper towel for 30-45 seconds,
+                    or warm them one at a time in a dry skillet for 15-20 seconds per side. This makes them pliable and prevents 
+                    cracking.
+                </li>
+                <li>Assemble the enchiladas: Spread about 1/2 cup of enchilada sauce on the bottom of the prepared baking dish. 
+                    Take one tortilla, place about 1/3 cup of the chicken filling in the center, roll it up tightly, 
+                    and place seam-side down in the baking dish. Repeat with remaining tortillas and filling, arranging 
+                    them snugly in the dish.
+                </li>
+                <li>Add sauce and cheese: Pour the remaining enchilada sauce evenly over all the rolled enchiladas, 
+                    making sure they're well covered. Sprinkle the remaining 1 cup of cheese (plus the additional cup for topping) 
+                    over the top. 
+                </li>
+                <li>Bake: Cover the baking dish with aluminum foil and bake for 20 minutes.
+                   Remove the foil and bake for an additional 10-15 minutes until the cheese is melted, bubbly, 
+                   and slightly golden.  
+                </li>
+                <li>Garnish and serve: Let the enchiladas rest for 5 minutes before serving. 
+                    Garnish with fresh cilantro, green onions, sour cream, diced tomatoes, and jalapeños if desired. 
+                    Serve hot with rice and beans on the side.
+                </li>
+            </ol>
+        </div>
+        <div class="footer-text">Recipe Book</div>
+    </div>
+    <div class="rating-section">
+    <div class="rating-header">
+        <h2>Recipe Rating</h2>
+        <div class="average-rating">
+            <span class="rating-number" id="avgRating">0.0</span>
+            <span class="stars-display" id="starsDisplay">☆☆☆☆☆</span>
+        </div>
+        <p class="total-ratings" id="totalRatings">No ratings yet</p>
+    </div>
+
+    <div class="rate-recipe">
+        <h3>Rate This Recipe</h3>
+        <div class="star-rating" id="starRating">
+            <span class="star" data-rating="1">☆</span>
+            <span class="star" data-rating="2">☆</span>
+            <span class="star" data-rating="3">☆</span>
+            <span class="star" data-rating="4">☆</span>
+            <span class="star" data-rating="5">☆</span>
+        </div>
+        <p id="ratingMessage" class="rating-submitted" style="display: none;"></p>
+    </div>
+</div>
+
+<!-- Comments Section -->
+<div class="comments-section">
+    <h2 class="comments-header">Comments & Reviews</h2>
+
+    <div class="add-comment">
+        <h3>Leave a Comment</h3>
+        <form id="commentForm">
+            <div class="form-group">
+                <label for="userName">Your Name *</label>
+                <input type="text" id="userName" required placeholder="Enter your name">
+            </div>
+            <div class="form-group">
+                <label for="userComment">Your Comment *</label>
+                <textarea id="userComment" required placeholder="Share your experience with this recipe..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>Your Rating (optional)</label>
+                <div class="star-rating" id="commentStarRating">
+                    <span class="star" data-rating="1">☆</span>
+                    <span class="star" data-rating="2">☆</span>
+                    <span class="star" data-rating="3">☆</span>
+                    <span class="star" data-rating="4">☆</span>
+                    <span class="star" data-rating="5">☆</span>
+                </div>
+                <input type="hidden" id="commentRating" value="0">
+            </div>
+            <button type="submit" class="submit-btn">Post Comment</button>
+        </form>
+    </div>
+
+    <div class="comments-list" id="commentsList">
+        <p class="no-comments">No comments yet. Be the first to share your thoughts!</p>
+    </div>
+</div>
+
+<script>
+    // IMPORTANT: Change this for each recipe!
+    const RECIPE_ID = 'honey-sesame-chicken';
+
+    // Star Rating System
+    class StarRating {
+        constructor(containerId, onRate) {
+            this.container = document.getElementById(containerId);
+            this.stars = this.container.querySelectorAll('.star');
+            this.onRate = onRate;
+            this.currentRating = 0;
+            this.init();
+        }
+
+        init() {
+            this.stars.forEach(star => {
+                star.addEventListener('mouseover', (e) => this.highlight(e.target));
+                star.addEventListener('mouseout', () => this.reset());
+                star.addEventListener('click', (e) => this.rate(e.target));
+            });
+        }
+
+        highlight(target) {
+            const rating = parseInt(target.dataset.rating);
+            this.stars.forEach((star, index) => {
+                star.textContent = index < rating ? '★' : '☆';
+            });
+        }
+
+        reset() {
+            this.stars.forEach((star, index) => {
+                star.textContent = index < this.currentRating ? '★' : '☆';
+            });
+        }
+
+        rate(target) {
+            this.currentRating = parseInt(target.dataset.rating);
+            this.reset();
+            if (this.onRate) {
+                this.onRate(this.currentRating);
+            }
+        }
+
+        getRating() {
+            return this.currentRating;
+        }
+
+        clear() {
+            this.currentRating = 0;
+            this.reset();
+        }
+    }
+
+    let mainRating, commentRating;
+
+    async function submitRating(rating) {
+        try {
+            let ratingsData = await getRatingsData();
+            ratingsData.ratings.push(rating);
+            ratingsData.total = ratingsData.ratings.length;
+            ratingsData.average = ratingsData.ratings.reduce((a, b) => a + b, 0) / ratingsData.total;
+
+            await window.storage.set(`recipe-ratings:${RECIPE_ID}`, JSON.stringify(ratingsData));
+            updateRatingDisplay();
+
+            const message = document.getElementById('ratingMessage');
+            message.textContent = `Thanks! You rated this recipe ${rating} stars.`;
+            message.style.display = 'block';
+
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        } catch (error) {
+            console.error('Error submitting rating:', error);
+            alert('Failed to submit rating. Please try again.');
+        }
+    }
+
+    async function getRatingsData() {
+        try {
+            const result = await window.storage.get(`recipe-ratings:${RECIPE_ID}`);
+            if (result && result.value) {
+                return JSON.parse(result.value);
+            }
+        } catch (error) {
+            console.log('No existing ratings found');
+        }
+        return { ratings: [], total: 0, average: 0 };
+    }
+
+    async function updateRatingDisplay() {
+        const data = await getRatingsData();
+        document.getElementById('avgRating').textContent = data.average.toFixed(1);
+        document.getElementById('totalRatings').textContent = 
+            data.total === 0 ? 'No ratings yet' :
+            data.total === 1 ? '1 rating' : `${data.total} ratings`;
+
+        const stars = Math.round(data.average);
+        let starsHtml = '';
+        for (let i = 0; i < 5; i++) {
+            starsHtml += i < stars ? '★' : '☆';
+        }
+        document.getElementById('starsDisplay').textContent = starsHtml;
+    }
+
+    async function getComments() {
+        try {
+            const result = await window.storage.get(`recipe-comments:${RECIPE_ID}`);
+            if (result && result.value) {
+                return JSON.parse(result.value);
+            }
+        } catch (error) {
+            console.log('No existing comments found');
+        }
+        return [];
+    }
+
+    async function displayComments() {
+        const comments = await getComments();
+        const commentsList = document.getElementById('commentsList');
+
+        if (comments.length === 0) {
+            commentsList.innerHTML = '<p class="no-comments">No comments yet. Be the first to share your thoughts!</p>';
+            return;
+        }
+
+        commentsList.innerHTML = comments.map(comment => {
+            const date = new Date(comment.date);
+            const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric'
+            });
+
+            let ratingHtml = '';
+            if (comment.rating > 0) {
+                ratingHtml = `<div class="comment-rating">${'★'.repeat(comment.rating)}${'☆'.repeat(5 - comment.rating)}</div>`;
+            }
+
+            return `
+                <div class="comment">
+                    <div class="comment-header">
+                        <span class="comment-author">${escapeHtml(comment.name)}</span>
+                        <span class="comment-date">${formattedDate}</span>
+                    </div>
+                    ${ratingHtml}
+                    <p class="comment-text">${escapeHtml(comment.text)}</p>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        mainRating = new StarRating('starRating', async (rating) => {
+            await submitRating(rating);
+        });
+
+        commentRating = new StarRating('commentStarRating', (rating) => {
+            document.getElementById('commentRating').value = rating;
+        });
+
+        updateRatingDisplay();
+        displayComments();
+
+        document.getElementById('commentForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('userName').value.trim();
+            const text = document.getElementById('userComment').value.trim();
+            const rating = parseInt(document.getElementById('commentRating').value);
+
+            if (!name || !text) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            const comment = {
+                id: Date.now(),
+                name: name,
+                text: text,
+                rating: rating,
+                date: new Date().toISOString()
+            };
+
+            try {
+                let comments = await getComments();
+                comments.unshift(comment);
+                await window.storage.set(`recipe-comments:${RECIPE_ID}`, JSON.stringify(comments));
+
+                if (rating > 0) {
+                    await submitRating(rating);
+                }
+
+                document.getElementById('commentForm').reset();
+                document.getElementById('commentRating').value = '0';
+                commentRating.clear();
+                displayComments();
+                alert('Comment posted successfully!');
+            } catch (error) {
+                console.error('Error posting comment:', error);
+                alert('Failed to post comment. Please try again.');
+            }
+        });
+    });
+</script>
+
+<footer>
+    <small>
+        <i>Copyright &copy; 2025 Hungry&Broke</i>
+    </small>
+</footer>
+</body>
+</html>
