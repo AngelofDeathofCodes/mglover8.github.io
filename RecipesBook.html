@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
 <head>
-    <meta charset ="utf-8">
+    <meta charset="utf-8">
     <title>Hungry&Broke - Recipes Book</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="filter-style.css">
@@ -22,138 +22,458 @@
                 <input type="text" placeholder="Search...">
                 <button type="submit">Go</button>
             </form>
+            <a href="signin.html" class="auth-btn">Sign In</a>
         </div>
     </nav>
 
-    
     <section class="third-hero-section">
         <h1>Choose from thousands of recipes</h1>
         <p>Appropriately integrate technically sound value with scalable infomediaries, negotiate sustainable meta-services.</p>
     </section>
 
-    <div class="container">
-        <div class="filter-header">
-            <h2>Recipes</h2>
-            <button class="filter-btn" onclick="toggleFilters()">
-                <span>🔍</span> Filter recipes
+    <div class="main-content-wrapper">
+        <aside class="filter-sidebar" id="filterSidebar">
+            <h3>Filters</h3>
+            
+            <div class="filter-section">
+                <h4>Meal Type</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="breakfast" name="meal" value="breakfast">
+                    <label for="breakfast">Breakfast <span>(12)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="lunch" name="meal" value="lunch">
+                    <label for="lunch">Lunch <span>(24)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="dinner" name="meal" value="dinner">
+                    <label for="dinner">Dinner <span>(36)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="dessert" name="meal" value="dessert">
+                    <label for="dessert">Dessert <span>(18)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Cuisine</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="american" name="cuisine" value="american">
+                    <label for="american">American <span>(15)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="asian" name="cuisine" value="asian">
+                    <label for="asian">Asian <span>(20)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="italian" name="cuisine" value="italian">
+                    <label for="italian">Italian <span>(18)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="mexican" name="cuisine" value="mexican">
+                    <label for="mexican">Mexican <span>(12)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="mediterranean" name="cuisine" value="mediterranean">
+                    <label for="mediterranean">Mediterranean <span>(10)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Difficulty</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="easy" name="difficulty" value="easy">
+                    <label for="easy">Easy <span>(28)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="medium" name="difficulty" value="medium">
+                    <label for="medium">Medium <span>(32)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="hard" name="difficulty" value="hard">
+                    <label for="hard">Hard <span>(15)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Dietary</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="vegetarian" name="dietary" value="vegetarian">
+                    <label for="vegetarian">Vegetarian <span>(22)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="vegan" name="dietary" value="vegan">
+                    <label for="vegan">Vegan <span>(14)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="gluten-free" name="dietary" value="gluten-free">
+                    <label for="gluten-free">Gluten-Free <span>(18)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Cooking Time</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="under30" name="time" value="under30">
+                    <label for="under30">Under 30 min <span>(25)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="30to60" name="time" value="30to60">
+                    <label for="30to60">30-60 min <span>(30)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="over60" name="time" value="over60">
+                    <label for="over60">Over 60 min <span>(20)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Minimum Rating</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="rating5" name="rating" value="5">
+                    <label for="rating5">5 Stars <span>⭐⭐⭐⭐⭐</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="rating4" name="rating" value="4">
+                    <label for="rating4">4+ Stars <span>⭐⭐⭐⭐</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="rating3" name="rating" value="3">
+                    <label for="rating3">3+ Stars <span>⭐⭐⭐</span></label>
+                </div>
+            </div>
+        </aside>
+
+        <div class="content-area">
+            <button class="mobile-filter-toggle" onclick="toggleSidebar()">
+                🔍 Show Filters
             </button>
-        </div>
 
-        <div class="active-filters" id="activeFilters">
-        </div>
-
-        <div class="recipe-grid">
-            <div class="recipe-card">
-                <img src="sesame-chicken-1.jpg" alt="Honey Sesame Chicken" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Honey Sesame Chicken</h3>
-                    <p>A crispy, bite-size chicken dish coated in a sweet and savory honey-soy glaze, topped with toasted sesame seeds and green onions.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 5.0</span>
-                        <span>⏱️ 45 mins</span>
-                        <span>👨‍🍳 Medium</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">Asian</span>
-                        <span class="tag">Dinner</span>
-                    </div>
-                </div>
+            <div class="filter-header">
+                <h2>Recipes</h2>
+                <button class="clear-filters-btn" onclick="clearFilters()">
+                    Clear All Filters
+                </button>
             </div>
 
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Fresh Salad" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Mediterranean Quinoa Bowl</h3>
-                    <p>A healthy and colorful bowl featuring quinoa, fresh vegetables, feta cheese, and a tangy lemon dressing.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 4.8</span>
-                        <span>⏱️ 25 mins</span>
-                        <span>👨‍🍳 Easy</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">Mediterranean</span>
-                        <span class="tag">Lunch</span>
-                        <span class="tag">Vegetarian</span>
-                    </div>
+            <div class="recipe-grid">
+                <div class="recipe-card" 
+                     data-recipe-id="honey-sesame-chicken"
+                     data-meal="dinner"
+                     data-cuisine="asian"
+                     data-difficulty="medium"
+                     data-time="30to60"
+                     data-rating="5.0">
+                    <a href="honey-sesame-chicken.html">
+                        <img src="sesame-chicken-1.jpg" alt="Honey Sesame Chicken" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Honey Sesame Chicken</h3>
+                            <p>A crispy, bite-size chicken dish coated in a sweet and savory honey-soy glaze, 
+                                topped with toasted sesame seeds and green onions.
+                            </p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 45 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">asian</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
 
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Pizza" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Classic Margherita Pizza</h3>
-                    <p>Authentic Italian pizza with fresh mozzarella, San Marzano tomatoes, and fresh basil on a perfectly crispy crust.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 4.9</span>
-                        <span>⏱️ 60 mins</span>
-                        <span>👨‍🍳 Medium</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">Italian</span>
-                        <span class="tag">Dinner</span>
-                    </div>
+                <div class="recipe-card"
+                     data-recipe-id="mediterranean-quinoa-bowl"
+                     data-meal="lunch"
+                     data-cuisine="mediterranean"
+                     data-difficulty="easy"
+                     data-dietary="vegetarian"
+                     data-time="under30"
+                     data-rating="4.8">
+                    <a href="./mediterrance-quinoa-bowl.html">
+                        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=500" alt="Fresh Salad" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Mediterranean Quinoa Bowl</h3>
+                            <p>A healthy and colorful bowl featuring quinoa, fresh vegetables, feta cheese, and a tangy lemon dressing.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.8</span>
+                                <span>⏱️ 25 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">mediterranean</span>
+                                <span class="tag">lunch</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
 
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500" alt="Pancakes" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Fluffy Buttermilk Pancakes</h3>
-                    <p>Light and fluffy pancakes perfect for weekend breakfast. Serve with maple syrup and fresh berries.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 5.0</span>
-                        <span>⏱️ 20 mins</span>
-                        <span>👨‍🍳 Easy</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">American</span>
-                        <span class="tag">Breakfast</span>
-                    </div>
+                <div class="recipe-card"
+                     data-recipe-id="classic-margherita-pizza"
+                     data-meal="dinner"
+                     data-cuisine="italian"
+                     data-difficulty="medium"
+                     data-dietary="vegetarian"
+                     data-time="over60"
+                     data-rating="4.9">
+                    <a href="./classic-margherita-pizza.html">
+                        <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?w=500" alt="Pizza" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Classic Margherita Pizza</h3>
+                            <p>Authentic Italian pizza with fresh mozzarella, San Marzano tomatoes, and fresh basil on a perfectly crispy crust.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.9</span>
+                                <span>⏱️ 60 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">italian</span>
+                                <span class="tag">dinner</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
 
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500" alt="Tacos" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Spicy Fish Tacos</h3>
-                    <p>Crispy beer-battered fish topped with crunchy cabbage slaw and spicy chipotle mayo in warm tortillas.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 4.7</span>
-                        <span>⏱️ 35 mins</span>
-                        <span>👨‍🍳 Medium</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">Mexican</span>
-                        <span class="tag">Dinner</span>
-                    </div>
+                <div class="recipe-card"
+                     data-recipe-id="fluffy-buttermilk-pancakes"
+                     data-meal="breakfast"
+                     data-cuisine="american"
+                     data-difficulty="easy"
+                     data-dietary="vegetarian"
+                     data-time="under30"
+                     data-rating="5.0">
+                    <a href="./fluffy-buttermilk-pancakes.html">
+                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=500" alt="Pancakes" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Fluffy Buttermilk Pancakes</h3>
+                            <p>Light and fluffy pancakes perfect for weekend breakfast. Serve with maple syrup and fresh berries.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 20 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">american</span>
+                                <span class="tag">breakfast</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
-            </div>
 
-            <div class="recipe-card">
-                <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?w=500" alt="Dessert" class="recipe-image">
-                <div class="recipe-info">
-                    <h3>Chocolate Lava Cake</h3>
-                    <p>Decadent individual chocolate cakes with a molten center. Perfect for impressing dinner guests.</p>
-                    <div class="recipe-meta">
-                        <span>⭐ 5.0</span>
-                        <span>⏱️ 30 mins</span>
-                        <span>👨‍🍳 Hard</span>
-                    </div>
-                    <div class="recipe-tags">
-                        <span class="tag">Dessert</span>
-                        <span class="tag">American</span>
-                    </div>
+                <div class="recipe-card"
+                     data-recipe-id="spicy-fish-tacos"
+                     data-meal="dinner"
+                     data-cuisine="mexican"
+                     data-difficulty="medium"
+                     data-time="30to60"
+                     data-rating="4.7">
+                    <a href="./spicy-fish-tacos.html">
+                        <img src="https://images.unsplash.com/photo-1599487488170-d11ec9c172f0?w=500" alt="Tacos" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Spicy Fish Tacos</h3>
+                            <p>Crispy beer-battered fish topped with crunchy cabbage slaw and spicy chipotle mayo in warm tortillas.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.7</span>
+                                <span>⏱️ 35 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">mexican</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="chocolate-lava-cake"
+                     data-meal="dessert"
+                     data-cuisine="american"
+                     data-difficulty="hard"
+                     data-time="under30"
+                     data-rating="5.0">
+                    <a href="chocolate-lava-cake.html">
+                        <img src="./lava-cakes-1sm-1-scaled.jpg" alt="Dessert" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Chocolate Lava Cake</h3>
+                            <p>Decadent individual chocolate cakes with a molten center. Perfect for impressing dinner guests.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 30 mins</span>
+                                <span>👨‍🍳 hard</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">dessert</span>
+                                <span class="tag">american</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="ground-beef-tacos"
+                     data-meal="dinner"
+                     data-cuisine="mexican"
+                     data-difficulty="easy"
+                     data-time="under30"
+                     data-rating="4.9">
+                    <a href="ground-beef-tacos.html">
+                        <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500" alt="Ground Beef Tacos" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Ground Beef Tacos</h3>
+                            <p>Classic seasoned ground beef tacos with fresh toppings in warm tortillas. Quick, easy, and perfect for weeknight dinners.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.9</span>
+                                <span>⏱️ 25 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">mexican</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="classic-hamburger"
+                     data-meal="dinner"
+                     data-cuisine="american"
+                     data-difficulty="easy"
+                     data-time="under30"
+                     data-rating="4.8">
+                    <a href="./hamburger.html">
+                        <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=500" alt="Classic Hamburger" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Classic Hamburger</h3>
+                            <p>Juicy homemade burger with perfectly seasoned beef patty, melted cheese, and all your favorite toppings on a toasted bun.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.8</span>
+                                <span>⏱️ 30 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">american</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="beef-fried-rice"
+                     data-meal="dinner"
+                     data-cuisine="asian"
+                     data-difficulty="medium"
+                     data-time="under30"
+                     data-rating="4.7">
+                    <a href="beef-fried-rice.html">
+                        <img src="./Beef-Fried-Rice-blog-2.jpg" alt="Beef Fried Rice" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Beef Fried Rice</h3>
+                            <p>Savory one-pan meal with tender beef, fluffy rice, crisp vegetables, and eggs tossed in a delicious soy-based sauce.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.7</span>
+                                <span>⏱️ 30 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">asian</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="chicken-enchiladas"
+                     data-meal="dinner"
+                     data-cuisine="mexican"
+                     data-difficulty="medium"
+                     data-time="over60"
+                     data-rating="5.0">
+                    <a href="chicken-echiladas.html">
+                        <img src="./chicken-enchiladas-1-12.jpg" alt="Chicken Enchiladas" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Chicken Enchiladas</h3>
+                            <p>Tender shredded chicken wrapped in soft tortillas, smothered in rich enchilada sauce and topped with melted cheese.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 75 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">mexican</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="classic-lasagna"
+                     data-meal="dinner"
+                     data-cuisine="italian"
+                     data-difficulty="medium"
+                     data-time="over60"
+                     data-rating="5.0">
+                    <a href="lasagna.html">
+                        <img src="https://images.unsplash.com/photo-1574894709920-11b28e7367e3?w=500" alt="Classic Lasagna" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Classic Lasagna</h3>
+                            <p>Hearty layers of rich meat sauce, creamy ricotta, tender pasta, and melted mozzarella. The ultimate Italian comfort food.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 135 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">italian</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="recipe-card"
+                     data-recipe-id="butter-chicken"
+                     data-meal="dinner"
+                     data-cuisine="asian"
+                     data-difficulty="medium"
+                     data-time="30to60"
+                     data-rating="4.9">
+                    <a href="./butter-chicken.html">
+                        <img src="https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=500" alt="Butter Chicken" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Butter Chicken</h3>
+                            <p>Tender chicken in a rich, creamy tomato sauce with aromatic spices. Serve with rice or naan for an authentic Indian meal.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.9</span>
+                                <span>⏱️ 45 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">asian</span>
+                                <span class="tag">dinner</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
     <footer>
-            <small>
-                <i>
-                    Copyright &copy; 2025 Hungry&Broke
-                </i>
-            </small>
-        </footer>  
+        <small>
+            <i>Copyright &copy; 2025 Hungry&Broke</i>
+        </small>
+    </footer>
+    <script src="./recipes-filter.js"></script>
+    <script src="home-btn-menu.js"></script>     
 </body>
 </html>
