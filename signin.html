@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Sign In - Hungry&Broke</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+
+        main {
+            margin: 0;
+            padding: 0;
+            min-height: calc(100vh - 60px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .auth-split-container {
+            display: flex;
+            width: 100%;
+            min-height: calc(100vh - 60px);
+            position: relative;
+        }
+
+        .auth-left {
+            flex: 1;
+            background-color: #f5f5f5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-right {
+            flex: 1;
+            background-color: #1a1a1a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 40px;
+            position: relative;
+            clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+            margin-left: -100px;
+        }
+
+        .auth-form-container {
+            width: 100%;
+            max-width: 380px;
+        }
+
+        .auth-form-container h2 {
+            color: #1a1a1a;
+            font-size: 42px;
+            font-weight: 800;
+            margin-bottom: 10px;
+            text-align: left;
+        }
+
+        .auth-form-container .underline {
+            width: 60px;
+            height: 4px;
+            background-color: #eb8b3d;
+            margin-bottom: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #666;
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 14px 40px 14px 14px;
+            border: none;
+            border-bottom: 2px solid #ddd;
+            background-color: transparent;
+            font-size: 16px;
+            box-sizing: border-box;
+            transition: border-color 200ms ease;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-bottom-color: #eb8b3d;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #999;
+            font-size: 18px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            background-color: #1a1a1a;
+            border: none;
+            border-radius: 30px;
+            color: #fff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 200ms ease, transform 120ms ease;
+            margin-top: 30px;
+        }
+
+        .submit-btn:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+
+        .toggle-text {
+            text-align: center;
+            margin-top: 25px;
+            color: #333;
+            font-size: 14px;
+        }
+
+        .toggle-text a {
+            color: #eb8b3d;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .toggle-text a:hover {
+            text-decoration: underline;
+        }
+
+        .welcome-content {
+            text-align: right;
+            color: #fff;
+            max-width: 450px;
+        }
+
+        .welcome-content h1 {
+            font-size: 56px;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .welcome-content p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        @media (max-width: 968px) {
+            .auth-split-container {
+                flex-direction: column;
+            }
+
+            .auth-right {
+                clip-path: polygon(0 10%, 100% 0, 100% 100%, 0% 100%);
+                margin-left: 0;
+                margin-top: -60px;
+                padding-top: 100px;
+            }
+
+            .welcome-content {
+                text-align: center;
+            }
+
+            .welcome-content h1 {
+                font-size: 42px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .auth-left,
+            .auth-right {
+                padding: 40px 20px;
+            }
+
+            .auth-form-container h2 {
+                font-size: 32px;
+            }
+
+            .welcome-content h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
+            <img src="hungry_and_broke_logo.png" alt="Hungry&Broke Logo">
+        </a>
+        <ul>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="RecipesBook.html">Recipes Book</a></li>
+            <li><a href="Tips&Tricks.html">Tips & Tricks</a></li>
+            <li><a href="Special Occasions.html">Special Occasions</a></li>
+        </ul>
+        <div class="search">
+            <form>
+                <input type="text" placeholder="Search...">
+                <button type="submit">Go</button>
+            </form>
+            <a href="signin.html" class="auth-btn">Sign In</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="auth-split-container">
+            <div class="auth-left">
+                <div class="auth-form-container">
+                    <h2>Login</h2>
+                    <div class="underline"></div>
+                    <form>
+                        <div class="form-group">
+                            <label for="signin-email">Username</label>
+                            <div class="input-wrapper">
+                                <input type="text" id="signin-email" name="email" placeholder="" required>
+                                <span class="input-icon">👤</span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="signin-password">Password</label>
+                            <div class="input-wrapper">
+                                <input type="password" id="signin-password" name="password" placeholder="" required>
+                                <span class="input-icon">🔒</span>
+                            </div>
+                        </div>
+                        <button type="submit" class="submit-btn">Login</button>
+                    </form>
+                    <div class="toggle-text">
+                        <p>Don't have an account? <a href="createaccount.html">Sign Up</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="auth-right">
+                <div class="welcome-content">
+                    <h1>WELCOME<br>BACK!</h1>
+                    <p>Get ready to explore delicious recipes that won't break the bank. Sign in to access your saved favorites and discover new budget-friendly meals!</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <small>
+            <i>Copyright &copy; 2025 Hungry & Broke</i>
+        </small>
+    </footer>
+</body>
+</html>
