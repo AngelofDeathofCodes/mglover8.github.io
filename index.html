@@ -1,143 +1,141 @@
 <!DOCTYPE html>
-<html lang ="en">
+<html lang="en">
 <head>
-    <title>
-        Hungry&Broke
-    </title>
-    <meta charset ="utf-8">
+    <meta charset="utf-8">
+    <title>Hungry&Broke</title>
     <link rel="stylesheet" href="style.css">
-   </head>
+</head>
 <body>
     <nav class="navbar">
-          <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
-             <img src="hungry_and_broke_logo.png" atl="Hungry&Broke Logo">
-          </a>
+        <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
+            <img src="hungry_and_broke_logo.png" alt="Hungry&Broke Logo">
+        </a>
         <ul>
-          <li><a href="index.html">Home</a></li> 
-          <li><a href="RecipesBook.html">Recipes Book</a></li>
-          <li><a href="Tips&Tricks.html"> Tips & Tricks</a></li>
-          <li><a href="Special Occasions.html">Special Occasions</a></li>
+            <li><a href="index.html">Home</a></li> 
+            <li><a href="RecipesBook.html">Recipes Book</a></li>
+            <li><a href="Tips&Tricks.html">Tips & Tricks</a></li>
+            <li><a href="Special Occasions.html">Special Occasions</a></li>
         </ul>
         <div class="search">
             <form>
                 <input type="text" placeholder="Search...">
                 <button type="submit">Go</button>
             </form>
+            <a href="signin.html" class="auth-btn">Sign In</a>
         </div>
     </nav>
+
     <section class="hero">
-        <div class=" hero-content">
-        <h1>
-            Cook Like a Pro with <br>
-            Our Easy and Tasty <br>
-            Recipes!
-        </h1>
-        <a href="RecipesBook.html" class="hero-btn" role="button" aria-label="View Recipes"> View Recipes</a>
+        <div class="hero-content">
+            <h1>
+                Cook Like a Pro with <br>
+                Our Easy and Tasty <br>
+                Recipes!
+            </h1>
+            <a href="RecipesBook.html" class="hero-btn" role="button" aria-label="View Recipes">View Recipes</a>
         </div>
     </section>
+
     <main>
-        <h3>
-            Explore Our Different Cuisine
-        </h3>
+        <h3>Explore Our Different Cuisines</h3>
         <div class="cuisine-grid" aria-label="Cuisine Types">
             <figure class="cuisine-item">
-                   <a href="RecipesBook.html" class="cusine-link">
-                <img src="Best-Lasagna_EXPS_ATBBZ25_36333_DR_07_01_2b.jpg" alt="Italian Cuisine">
-                <figcaption>Italian</figcaption>
-                   </a>
-           </figure>
-           <figure class="cuisine-item">
-                   <a href="RecipesBook.html" class="cusine-link">
-                <img src="Ground-Beef-Tacos-TIMG.jpg" alt="Mexican Cuisine">
-               <figcaption>Mexican</figcaption>   
-                    </a> 
+                <a href="RecipesBook.html?cuisine=italian" class="cuisine-link">
+                    <img src="Best-Lasagna_EXPS_ATBBZ25_36333_DR_07_01_2b.jpg" alt="Italian Cuisine">
+                    <figcaption>Italian</figcaption>
+                </a>
             </figure>
-           <figure class="cuisine-item">
-                       <a href="RecipesBook.html" class="cusine-link">
-               <img src="Butter-Chicken.jpg" alt="Indian Cuisine">
-               <figcaption>Asian</figcaption>
-                     </a> 
-           </figure>
-           <figure class="cuisine-item">
-                       <a href="RecipesBook.html" class="cusine-link">
-               <img src="download.jpeg" alt="American Cuisine">
-                <figcaption>American</figcaption>
-                     </a>
+            <figure class="cuisine-item">
+                <a href="RecipesBook.html?cuisine=mexican" class="cuisine-link">
+                    <img src="Ground-Beef-Tacos-TIMG.jpg" alt="Mexican Cuisine">
+                    <figcaption>Mexican</figcaption>   
+                </a> 
+            </figure>
+            <figure class="cuisine-item">
+                <a href="RecipesBook.html?cuisine=asian" class="cuisine-link">
+                    <img src="Butter-Chicken.jpg" alt="Indian Cuisine">
+                    <figcaption>Asian</figcaption>
+                </a> 
+            </figure>
+            <figure class="cuisine-item">
+                <a href="RecipesBook.html?cuisine=american" class="cuisine-link">
+                    <img src="download.jpeg" alt="American Cuisine">
+                    <figcaption>American</figcaption>
+                </a>
             </figure>
         </div>
+
         <section class="secondary-hero" aria-labelledby="secondary-hero-title">
             <div class="secondary-hero-inner">
+                <div class="secondary-hero-image">
+                    <img src="mac-cheese-hero.jpg" alt="Creamy Baked Mac and Cheese">
+                </div>
                 <div class="secondary-hero-text">
-                <h2 id="secondary-hero-title"> Reicpes of the Month:</h2>
-                <p>
-                   <b> 
-                    Try our easy honey seasame chciken - ready in just 30 minutes!<br>
-                    A crispy, bite-size chicken dish coated in a sweet and savory honey-soy<br>
-                    glazed, topped with toasted seasme seeds and green onions. It's flavorful, sticky, and often severed<br>
-                    over rice for a delicious Asian-inspired meal.<br>
-                    Click the button for the full method, ingredients, and serving suggestions.
-                    </b>
-                </p>
-                <div class="hero-buttons">
-                   <a href="RecipesBook.html" class="secondary-hero-btn" role="button" aria-label="See Recipe">View Recipe</a>
-               </div>
-            </div>
-            <div class="secondary-hero-image">
-           <img src="sesame-chicken-1.jpg" alt="Recipe of the Month Image">
+                    <p class="collection-label">COLLECTION</p>
+                    <h2 id="secondary-hero-title">32 BEST MAC & CHEESE RECIPES</h2>
+                    <p class="recipe-description">
+                        Cheesy and oh so satisfying, mac and cheese can do no wrong. Transport yourself back to childhood with one of these classic or kicked-up options.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="mac-and-cheese.html" class="secondary-hero-btn" role="button" aria-label="View Recipe">View Recipe</a>
+                    </div>
+                </div>
             </div>
         </section>
-        <h3> Popular Recipes</h3>
- <div class="popular-grid" aria-label="Popular Recipes">
-           <figure class="popular-item">
+
+        <h3>Popular Recipes</h3>
+        <div class="popular-grid" aria-label="Popular Recipes">
+            <figure class="popular-item">
                 <img src="Butter-Chicken.jpg" alt="Butter Chicken">
                 <div class="card-body">
                     <figcaption>Butter Chicken</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Butter Chicken">View Recipe</a>
+                    <a href="butter-chicken.html" class="recipe-btn" role="button" aria-label="View Butter Chicken">View Recipe</a>
                 </div>
             </figure>
             <figure class="popular-item">
                 <img src="Ground-Beef-Tacos-TIMG.jpg" alt="Ground Beef Taco">
                 <div class="card-body">
                     <figcaption>Ground Beef Taco</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Ground Beef Taco">View Recipe</a>
+                    <a href="./ground-beef-tacos.html" class="recipe-btn" role="button" aria-label="View Ground Beef Taco">View Recipe</a>
                 </div>
             </figure>
             <figure class="popular-item">
                 <img src="download.jpeg" alt="Hamburger">
                 <div class="card-body">
                     <figcaption>Hamburger</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Hamburger">View Recipe</a>
+                    <a href="./hamburger.html" class="recipe-btn" role="button" aria-label="View Hamburger">View Recipe</a>
                 </div>
             </figure>
             <figure class="popular-item">
                 <img src="Best-Lasagna_EXPS_ATBBZ25_36333_DR_07_01_2b.jpg" alt="Beef Lasagna">
                 <div class="card-body">
                     <figcaption>Beef Lasagna</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Beef Lasagna">View Recipe</a>
+                    <a href="./lasagna.html" class="recipe-btn" role="button" aria-label="View Beef Lasagna">View Recipe</a>
                 </div>
             </figure>
             <figure class="popular-item">
                 <img src="Beef-Fried-Rice-blog-2.jpg" alt="Beef Fried Rice">
                 <div class="card-body">
                     <figcaption>Beef Fried Rice</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Beef Fried Rice">View Recipe</a>
+                    <a href="./beef-fried-rice.html" class="recipe-btn" role="button" aria-label="View Beef Fried Rice">View Recipe</a>
                 </div>
             </figure>
             <figure class="popular-item">
                 <img src="chicken-enchiladas-1-12.jpg" alt="Chicken Enchiladas">
                 <div class="card-body">
                     <figcaption>Chicken Enchiladas</figcaption>
-                    <a href="RecipesBook.html" class="recipe-btn" role="button" aria-label="View Chicken Enchiladas">View Recipe</a>
+                    <a href="./chicken-echiladas.html" class="recipe-btn" role="button" aria-label="View Chicken Enchiladas">View Recipe</a>
                 </div>
             </figure>
         </div>
     </main>
+
     <footer>
         <small>
-            <i>
-                Copyright &copy; 2025 Hungry & Broke
-            </i>
+            <i>Copyright &copy; 2025 Hungry & Broke</i>
         </small>
-    </footer>             
+    </footer>   
+    <script src="recipe-of-month.js"></script>
+    <script src="home-btn-menu.js"></script>         
 </body>
 </html>
