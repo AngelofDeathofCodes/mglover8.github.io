@@ -5,37 +5,37 @@ const recipes = [
         name: "Honey Sesame Chicken",
         description: "Try our easy honey sesame chicken - ready in just 30 minutes! A crispy, bite-size chicken dish coated in a sweet and savory honey-soy glaze, topped with toasted sesame seeds and green onions. It's flavorful, sticky, and often served over rice for a delicious Asian-inspired meal.",
         link: "honey-sesame-chicken.html",
-        image: "sesame-chicken-1.jpg"  // ← This filename must match your actual image file
+        image: "sesame-chicken-1.jpg"
     },
     {
         name: "Butter Chicken",
         description: "Rich and creamy Indian curry with tender chicken pieces in a tomato-based sauce with aromatic spices. Perfect served over basmati rice with naan bread for dipping.",
         link: "butter-chicken.html",
-        image: "Butter-Chicken.jpg"  // ← Must match actual filename (case-sensitive!)
+        image: "Butter-Chicken.jpg"
     },
     {
         name: "Ground Beef Tacos",
         description: "Classic Mexican-style tacos with seasoned ground beef, fresh toppings, and warm tortillas. Quick, easy, and perfect for weeknight dinners or casual gatherings.",
         link: "ground-beef-tacos.html",
-        image: "Ground-Beef-Tacos-TIMG.jpg"  // ← Must match actual filename
+        image: "Ground-Beef-Tacos-TIMG.jpg"
     },
     {
         name: "Beef Lasagna",
         description: "Layers of pasta, rich meat sauce, creamy béchamel, and melted cheese create this Italian comfort food classic. A crowd-pleasing dish that's worth the effort!",
         link: "lasagna.html",
-        image: "Best-Lasagna_EXPS_ATBBZ25_36333_DR_07_01_2b.jpg"  // ← Must match actual filename
+        image: "Best-Lasagna_EXPS_ATBBZ25_36333_DR_07_01_2b.jpg"
     },
     {
         name: "Beef Fried Rice",
         description: "Asian-inspired fried rice with tender beef, vegetables, and fluffy rice all tossed in a savory sauce. A great way to use leftover rice and create a complete meal.",
         link: "beef-fried-rice.html",
-        image: "Beef-Fried-Rice-blog-2.jpg"  // ← Must match actual filename
+        image: "Beef-Fried-Rice-blog-2.jpg"
     },
     {
         name: "Chicken Enchiladas",
         description: "Rolled tortillas filled with seasoned chicken, smothered in enchilada sauce and cheese. Baked until bubbly and golden for a delicious Mexican dinner.",
         link: "chicken-enchiladas.html",
-        image: "chicken-enchiladas-1-12.jpg"  // ← Must match actual filename
+        image: "chicken-enchiladas-1-12.jpg"
     }
 ];
 
@@ -65,17 +65,17 @@ function displayRecipeOfTheMonth() {
     
     // Find the HTML elements to update
     const titleElement = document.getElementById('secondary-hero-title');
-    const descriptionElement = document.querySelector('.secondary-hero-text p strong');
+    const descriptionElement = document.querySelector('.recipe-description strong');
     const buttonElement = document.querySelector('.secondary-hero-btn');
     const imageElement = document.querySelector('.secondary-hero-image img');
     
     // Update each element with the selected recipe data
     if (titleElement) {
-        titleElement.textContent = `Recipe of the Month: ${recipe.name}`;
+        titleElement.textContent = recipe.name;
     }
     
     if (descriptionElement) {
-        descriptionElement.innerHTML = recipe.description;
+        descriptionElement.textContent = recipe.description;
     }
     
     if (buttonElement) {
@@ -83,16 +83,12 @@ function displayRecipeOfTheMonth() {
     }
     
     if (imageElement) {
-        // This is where the image gets linked!
-        imageElement.src = recipe.image;  // Sets the image source
-        imageElement.alt = `${recipe.name} - Recipe of the Month`;  // Sets alt text
+        // Update the image source and alt text
+        imageElement.src = recipe.image;
+        imageElement.alt = `${recipe.name} - Recipe of the Month`;
     }
     
-    // Also update the background image of the secondary-hero section
-    const secondaryHero = document.querySelector('.secondary-hero');
-    if (secondaryHero) {
-        secondaryHero.style.backgroundImage = `url(${recipe.image})`;
-    }
+    console.log(`Recipe of the Month for ${new Date().toLocaleString('default', { month: 'long', year: 'numeric' })}: ${recipe.name}`);
 }
 
 // Run when page loads
