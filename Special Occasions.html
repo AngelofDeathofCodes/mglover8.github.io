@@ -3,19 +3,19 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Hungry&Broke - Tips&Tricks</title>
-    <link rel="stylesheet" href="filter-style2.css">
+    <title>Hungry&Broke - Special Occasions</title>
+    <link rel="stylesheet" href="filter-style3.css">
 </head>
 <body>
     <nav class="navbar">
         <a href="index.html" class="navbar-logo" aria-label="Hungry&Broke home">
-            <img src="hungry_and_broke_logo.png" alt="Hungry&Broke Logo">
-        </a>
+             <img src="hungry_and_broke_logo.png" alt="Hungry&Broke Logo">
+          </a>
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="RecipesBook.html">Recipes Book</a></li>
-            <li><a href="Tips&Tricks.html">Tips & Tricks</a></li>
-            <li><a href="Special Occasions.html">Special Occasions</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="RecipesBook.html">Recipes Book</a></li>
+          <li><a href="Tips&Tricks.html"> Tips & Tricks</a></li>
+          <li><a href="Special Occasions.html">Special Occasions</a></li>
         </ul>
         <div class="search">
             <form>
@@ -25,354 +25,497 @@
             <a href="signin.html" class="auth-btn">Sign In</a>
         </div>
     </nav>
-    
-    <section class="fourth-hero-section">
-        <h1>Learn to cook with video tutorials</h1>
-        <p>Step-by-step cooking videos to help you master delicious recipes with ease and confidence.</p>
+
+    <section class="third-hero-section">
+        <h1>Celebrate Every Holiday with Delicious Recipes</h1>
+        <p>Make every holiday special with budget-friendly recipes perfect for celebrations. From festive dinners to sweet treats, create memorable moments without breaking the bank.</p>
     </section>
 
-    <div class="container">
-        <div class="filter-header">
-            <h2>Tips & Tricks Video</h2>
-            <button class="filter-btn">
-                <span>🔍</span> Filter videos
+    <div class="main-content-wrapper">
+        <aside class="filter-sidebar" id="filterSidebar">
+            <h3>Filters</h3>
+            
+            <div class="filter-section">
+                <h4>Holiday</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="christmas" name="holiday" value="christmas">
+                    <label for="christmas">Christmas <span>(15)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="thanksgiving" name="holiday" value="thanksgiving">
+                    <label for="thanksgiving">Thanksgiving <span>(12)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="halloween" name="holiday" value="halloween">
+                    <label for="halloween">Halloween <span>(10)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="easter" name="holiday" value="easter">
+                    <label for="easter">Easter <span>(8)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="valentines" name="holiday" value="valentines">
+                    <label for="valentines">Valentine's Day <span>(10)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="newyears" name="holiday" value="newyears">
+                    <label for="newyears">New Year's <span>(9)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="fourth-july" name="holiday" value="fourth-july">
+                    <label for="fourth-july">4th of July <span>(11)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Meal Type</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="appetizer" name="meal" value="appetizer">
+                    <label for="appetizer">Appetizer <span>(18)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="main-course" name="meal" value="main-course">
+                    <label for="main-course">Main Course <span>(25)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="side-dish" name="meal" value="side-dish">
+                    <label for="side-dish">Side Dish <span>(20)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="dessert" name="meal" value="dessert">
+                    <label for="dessert">Dessert <span>(22)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="drinks" name="meal" value="drinks">
+                    <label for="drinks">Drinks <span>(12)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Difficulty</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="easy" name="difficulty" value="easy">
+                    <label for="easy">Easy <span>(35)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="medium" name="difficulty" value="medium">
+                    <label for="medium">Medium <span>(28)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="hard" name="difficulty" value="hard">
+                    <label for="hard">Hard <span>(12)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Dietary</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="vegetarian" name="dietary" value="vegetarian">
+                    <label for="vegetarian">Vegetarian <span>(20)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="vegan" name="dietary" value="vegan">
+                    <label for="vegan">Vegan <span>(15)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="gluten-free" name="dietary" value="gluten-free">
+                    <label for="gluten-free">Gluten-Free <span>(18)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Prep Time</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="under30" name="time" value="under30">
+                    <label for="under30">Under 30 min <span>(20)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="30to60" name="time" value="30to60">
+                    <label for="30to60">30-60 min <span>(28)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="over60" name="time" value="over60">
+                    <label for="over60">Over 60 min <span>(27)</span></label>
+                </div>
+            </div>
+
+            <div class="filter-section">
+                <h4>Budget</h4>
+                <div class="filter-option">
+                    <input type="checkbox" id="budget-friendly" name="budget" value="budget-friendly">
+                    <label for="budget-friendly">Budget-Friendly <span>(40)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="moderate" name="budget" value="moderate">
+                    <label for="moderate">Moderate <span>(25)</span></label>
+                </div>
+                <div class="filter-option">
+                    <input type="checkbox" id="splurge" name="budget" value="splurge">
+                    <label for="splurge">Splurge-Worthy <span>(10)</span></label>
+                </div>
+            </div>
+        </aside>
+
+        <div class="content-area">
+            <button class="mobile-filter-toggle" onclick="toggleSidebar()">
+                🔍 Show Filters
             </button>
-        </div>
-        
-        <div class="content-wrapper">
-            <aside class="sidebar">
-                <h3>Filter Video</h3>
-                <div class="filter-group">
-                    <h4>Difficulty Level</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" id="beginner" name="difficulty" value="beginner">
-                       <label for="beginner">Beginner</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="intermediate" name="difficulty" value="intermediate">
-                        <label for="intermediate">Intermediate</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="advanced" name="difficulty" value="advanced">
-                        <label for="advanced">Advanced</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="all-levels" name="difficulty" value="all-levels">
-                        <label for="all-levels">All Levels</label>
-                    </div>
+
+            <div class="filter-header">
+                <h2>Holiday Recipes</h2>
+                <button class="clear-filters-btn" onclick="clearFilters()">
+                    Clear All Filters
+                </button>
+            </div>
+
+            <div class="recipe-grid">
+                <!-- Recipe 1: Roasted Turkey -->
+                <div class="recipe-card" 
+                     data-recipe-id="classic-roasted-turkey"
+                     data-holiday="thanksgiving christmas"
+                     data-meal="main-course"
+                     data-difficulty="medium"
+                     data-time="over60"
+                     data-budget="moderate"
+                     data-rating="4.9">
+                    <a href="./classic-roasted-turkey.html">
+                        <img src="https://images.unsplash.com/photo-1574672280600-4accfa5b6f98?w=500" alt="Roasted Turkey" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Classic Roasted Turkey</h3>
+                            <p>A perfectly golden, juicy roasted turkey that's the centerpiece of any holiday feast. Includes herb butter and gravy recipe.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.9</span>
+                                <span>⏱️ 180 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">thanksgiving</span>
+                                <span class="tag">christmas</span>
+                                <span class="tag">main-course</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="filter-group">
-                    <h4>Category</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" id="basics" name="category" value="basics">
-                        <label for="basics">Basics</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="knife-skills" name="category" value="knife-skills">
-                        <label for="knife-skills">Knife Skills</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="budget" name="category" value="budget">
-                        <label for="budget">Budget Tips</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="meal-prep" name="category" value="meal-prep">
-                        <label for="meal-prep">Meal Prep</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="equipment" name="category" value="equipment">
-                        <label for="equipment">Equipment</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="techniques" name="category" value="techniques">
-                        <label for="techniques">Techniques</label>
-                    </div>
+                <!-- Recipe 2: Pumpkin Pie -->
+                <div class="recipe-card"
+                     data-recipe-id="classic-pumpkin-pie"
+                     data-holiday="thanksgiving"
+                     data-meal="dessert"
+                     data-difficulty="easy"
+                     data-dietary="vegetarian"
+                     data-time="30to60"
+                     data-budget="budget-friendly"
+                     data-rating="5.0">
+                    <a href="./pumpkin-pie.html">
+                        <img src="./Bourbon-Pumpkin-Pie-111.jpg" alt="Pumpkin Pie" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Classic Pumpkin Pie</h3>
+                            <p>Smooth, spiced pumpkin filling in a flaky crust. The perfect ending to your Thanksgiving dinner.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 60 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">thanksgiving</span>
+                                <span class="tag">dessert</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
+                        </div>
+                    </a>
                 </div>
 
-                <div class="filter-group">
-                    <h4>Duration</h4>
-                    <div class="filter-option">
-                        <input type="checkbox" id="short" name="duration" value="short">
-                        <label for="short">Under 5 mins</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="medium" name="duration" value="medium">
-                        <label for="medium">5-10 mins</label>
-                    </div>
-                    <div class="filter-option">
-                        <input type="checkbox" id="long" name="duration" value="long">
-                        <label for="long">Over 10 mins</label>
-                    </div>
-                </div>
-                <button class="clear-filters">Clear All Filter</button>
-            </aside>
-
-            <div class="video-grid">
-                <div class="video-card" data-difficulty="beginner" data-category="basics knife-skills" data-duration="medium">
-                    <div class="video-embed-container">
-                        <iframe 
-                         width="560" 
-                         height="315"
-                         src="https://www.youtube.com/embed/aoqVGdmVlKk?si=KkFFsQT4lxV7bcyS" 
-                         title="YouTube video player"
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                         </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Knife Skills 101: Perfect Cuts Every Time</h3>
-                        <p>Learn proper knife techniques including dicing, mincing, and julienning.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 8 mins</span>
-                            <span>💡 Beginner</span>
+                <!-- Recipe 3: Gingerbread Cookies -->
+                <div class="recipe-card"
+                     data-recipe-id="gingerbread-cookies"
+                     data-holiday="christmas"
+                     data-meal="dessert"
+                     data-difficulty="easy"
+                     data-dietary="vegetarian"
+                     data-time="30to60"
+                     data-budget="budget-friendly"
+                     data-rating="4.8">
+                    <a href="./gingerbread-cookies.html">
+                        <img src="./gingerbread-cookies.jpg" alt="Gingerbread Cookies" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>Gingerbread Cookies</h3>
+                            <p>Festive spiced cookies perfect for decorating. Fun to make with family and friends during the holiday season.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.8</span>
+                                <span>⏱️ 45 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">christmas</span>
+                                <span class="tag">dessert</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
                         </div>
-                        <div class="video-tags">
-                            <span class="tag">Basics</span>
-                            <span class="tag">Knife Skills</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="video-card" data-difficulty="all-levels" data-category="budget" data-duration="medium">
-                    <div class="video-embed-container">
-                        <iframe 
-                         width="560" 
-                         height="315" 
-                         src="https://www.youtube.com/embed/ob-06o3TggE?si=dJAUrBtT3SwSx7lU" 
-                         title="YouTube video player" 
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                         </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>5 Ways to Save Money on Groceries</h3>
-                        <p>Discover practical strategies to cut your grocery bill in half.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 6 mins</span>
-                            <span>💡 All Levels</span>
+                <!-- Recipe 5: Hot Chocolate Bar -->
+                <div class="recipe-card"
+                     data-recipe-id="hot-chocolate-bar"
+                     data-holiday="christmas newyears"
+                     data-meal="drinks"
+                     data-difficulty="easy"
+                     data-dietary="vegetarian"
+                     data-time="under30"
+                     data-budget="budget-friendly"
+                     data-rating="5.0">
+                    <a href="./diy-hot-chocolate-bar.html">
+                        <img src="./Hot-Chocolate.jpeg" alt="Hot Chocolate" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>DIY Hot Chocolate Bar</h3>
+                            <p>Rich homemade hot chocolate with fun toppings like marshmallows, whipped cream, and peppermint sticks.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 5.0</span>
+                                <span>⏱️ 20 mins</span>
+                                <span>👨‍🍳 easy</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">christmas</span>
+                                <span class="tag">drinks</span>
+                                <span class="tag">vegetarian</span>
+                            </div>
                         </div>
-                        <div class="video-tags">
-                            <span class="tag">Budget</span>
-                            <span class="tag">Shopping</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <div class="video-card" data-difficulty="all-levels" data-category="meal-prep" data-duration="long">
-                    <div class="video-embed-container">
-                        <iframe 
-                         width="560" 
-                         height="315" 
-                         src="https://www.youtube.com/embed/6An7iH4BwJo?si=dsCruVJuTw0wPi_V" 
-                         title="YouTube video player" 
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Meal Prep Like a Pro</h3>
-                        <p>Transform your weekly cooking with smart meal prep strategies.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 12 mins</span>
-                            <span>💡 All Levels</span>
+                <!-- Recipe 6: BBQ Ribs -->
+                <div class="recipe-card"
+                     data-recipe-id="bbq-ribs"
+                     data-holiday="fourth-july"
+                     data-meal="main-course"
+                     data-difficulty="medium"
+                     data-time="over60"
+                     data-budget="moderate"
+                     data-rating="4.9">
+                    <a href="./bbq-baby-back-ribs.html">
+                        <img src="./oven-baked-baby-back-ribs-17.jpg" alt="BBQ Ribs" class="recipe-image">
+                        <div class="recipe-info">
+                            <h3>BBQ Baby Back Ribs</h3>
+                            <p>Tender, fall-off-the-bone ribs with a sweet and tangy homemade BBQ sauce. Perfect for summer celebrations.</p>
+                            <div class="recipe-meta">
+                                <span class="rating-display">⭐ 4.9</span>
+                                <span>⏱️ 150 mins</span>
+                                <span>👨‍🍳 medium</span>
+                            </div>
+                            <div class="recipe-tags">
+                                <span class="tag">fourth-july</span>
+                                <span class="tag">main-course</span>
+                            </div>
                         </div>
-                        <div class="video-tags">
-                            <span class="tag">Meal Prep</span>
-                            <span class="tag">Time-Saving</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card" data-difficulty="intermediate" data-category="equipment" data-duration="long">
-                    <div class="video-embed-container">
-                        <iframe 
-                        width="560"
-                         height="315" 
-                         src="https://www.youtube.com/embed/P4zW-C010oc?si=i4wmpIi6uDsscmU1" 
-                         title="YouTube video player" 
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                        </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>How to Season Cast Iron Cookware</h3>
-                        <p>Properly season and maintain your cast iron.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 10 mins</span>
-                            <span>💡 Intermediate</span>
-                        </div>
-                        <div class="video-tags">
-                            <span class="tag">Equipment</span>
-                            <span class="tag">Maintenance</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card" data-difficulty="beginner" data-category="budget" data-duration="medium">
-                    <div class="video-embed-container">
-                        <iframe 
-                         width="560"  
-                         height="315" 
-                         src="https://www.youtube.com/embed/bsYzWK3cxOM?si=SMlpXsgpx1fBUg-l" 
-                         title="YouTube video player" 
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
-                         </iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Spices 101</h3>
-                        <p>Spices 101 is your quick guide to understanding the flavors, aromas, and everyday uses of essential spices.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 20 mins</span>
-                            <span>💡 Beginner</span>
-                        </div>
-                        <div class="video-tags">
-                            <span class="tag">Storage</span>
-                            <span class="tag">Basics</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="video-card" data-difficulty="intermediate" data-category="techniques basics" data-duration="medium">
-                    <div class="video-embed-container">
-                        <iframe 
-                         width="560" 
-                         height="315" 
-                         src="https://www.youtube.com/embed/nirkYf0YIRk?si=N-m6BtSGhXV1n9NE" 
-                         title="YouTube video player" 
-                         frameborder="0" 
-                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                         referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                    <div class="video-info">
-                        <h3>Mastering Heat Control on Any Stove</h3>
-                        <p>Understanding heat is the key to better cooking.</p>
-                        <div class="video-meta">
-                            <span>⏱️ 7 mins</span>
-                            <span>💡 Intermediate</span>
-                        </div>
-                        <div class="video-tags">
-                            <span class="tag">Techniques</span>
-                            <span class="tag">Basics</span>
-                        </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
     </div>
 
+    <script>
+        // Store recipe ratings in memory for filtering
+        let recipeRatingsCache = {};
 
-    <section class="measurements-section">
-        <h2>Cooking Measurement Conversions</h2>
-        <div class="measurement-subsection">
-            <h3>Liquid Volume Conversion Chart (US Customary)</h3>
-            <p style="color: #666; margin-bottom: 20px; font-style:italic;">
-                This chart is based on fluid ounces and volume measurements.
-            </p>
-            <div class="table-wrapper">
-                <table class="measurement-table">
-                    <thead>
-                        <tr>
-                            <th>Measurement</th>
-                            <th>Equivalents</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1 Tablespoon (Tbsp)</td>
-                            <td>3 teaspoons (tsp) or 1/2 fluid ounce</td>
-                        </tr>
-                        <tr>
-                          <td>1/4 cup</td>
-                          <td>4 Tbsp or 2 fluid ounces</td>
-                        </tr>
-                        <tr>
-                           <td>1/2 cup</td>
-                           <td>8 Tbsp or 4 fluid ounces</td>
-                        </tr>
-                        <tr>
-                            <td>1 cup</td>
-                            <td>16 Tbsp, 8 fluid ounces, or 1/2 pint</td>
-                        </tr>
-                        <tr>
-                            <td>2 cups</td>
-                            <td>1 pint or 16 fluid ounces</td>
-                        </tr>
-                        <tr>
-                            <td>4 cups</td>
-                            <td>1 quart or 32 fluid ounces</td>
-                        </tr>
-                        <tr>
-                            <td>1 gallon</td>
-                            <td>4 quarts or 128 fluid ounces</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        function toggleSidebar() {
+            const sidebar = document.getElementById('filterSidebar');
+            sidebar.classList.toggle('active');
+        }
 
-         <div class="measurement-subsection">
-            <h3>Dry Measurement Conversion Chart</h3>
-            <p style="color: #666; margin-bottom: 20px; font-style: italic;">Dry measures focus on ensuring proper volume by leveling ingredients. The weight of a "cup" of dry ingredients (like flour vs. sugar) will vary, but their volume equivalents in the US system are consistent.</p>
-            <div class="table-wrapper">
-                <table class="measurement-table">
-                    <thead>
-                        <tr>
-                            <th>Measurement</th>
-                            <th>Equivalents</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>1 Tablespoon (Tbsp)</td>
-                            <td>3 teaspoons (tsp)</td>
-                        </tr>
-                        <tr>
-                            <td>1/8 cup</td>
-                            <td>2 Tbsp</td>
-                        </tr>
-                        <tr>
-                            <td>1/4 cup</td>
-                            <td>4 Tbsp</td>
-                        </tr>
-                        <tr>
-                            <td>1/3 cup</td>
-                            <td>5 Tbsp + 1 tsp</td>
-                        </tr>
-                        <tr>
-                            <td>1/2 cup</td>
-                            <td>8 Tbsp</td>
-                        </tr>
-                        <tr>
-                            <td>2/3 cup</td>
-                            <td>10 Tbsp + 2 tsp</td>
-                        </tr>
-                        <tr>
-                            <td>3/4 cup</td>
-                            <td>12 Tbsp</td>
-                        </tr>
-                        <tr>
-                            <td>1 cup</td>
-                            <td>16 Tbsp</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </section>
-    
+        function clearFilters() {
+            const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+            checkboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            filterRecipes();
+        }
+
+        // Helper function to get recipe ID from card
+        function getRecipeIdFromCard(card) {
+            if (card.dataset.recipeId) {
+                return card.dataset.recipeId;
+            }
+            
+            const link = card.querySelector('a');
+            if (!link) return null;
+            
+            const href = link.getAttribute('href');
+            return href.replace('.html', '').toLowerCase().replace(/\s+/g, '-');
+        }
+
+        // Get rating data for a specific recipe
+        async function getRatingForRecipe(recipeId) {
+            if (recipeRatingsCache[recipeId]) {
+                return recipeRatingsCache[recipeId];
+            }
+
+            try {
+                const result = await window.storage.get(`recipe-ratings:${recipeId}`);
+                if (result && result.value) {
+                    const data = JSON.parse(result.value);
+                    recipeRatingsCache[recipeId] = data;
+                    return data;
+                }
+            } catch (error) {
+                console.log(`No rating found for ${recipeId}`);
+            }
+            
+            return { average: 0, total: 0, ratings: [] };
+        }
+
+        // Main filtering function
+        async function filterRecipes() {
+            const selectedHolidays = getSelectedValues('holiday');
+            const selectedMeals = getSelectedValues('meal');
+            const selectedDifficulties = getSelectedValues('difficulty');
+            const selectedDietary = getSelectedValues('dietary');
+            const selectedTimes = getSelectedValues('time');
+            const selectedBudget = getSelectedValues('budget');
+
+            const recipeCards = document.querySelectorAll('.recipe-card');
+
+            for (const card of recipeCards) {
+                const tags = Array.from(card.querySelectorAll('.tag')).map(tag => tag.textContent.toLowerCase());
+                const metaText = card.querySelector('.recipe-meta').textContent.toLowerCase();
+                
+                let showRecipe = true;
+
+                // Filter by holiday
+                if (selectedHolidays.length > 0) {
+                    const matchesHoliday = selectedHolidays.some(holiday => tags.includes(holiday));
+                    if (!matchesHoliday) showRecipe = false;
+                }
+
+                // Filter by meal type
+                if (selectedMeals.length > 0) {
+                    const matchesMeal = selectedMeals.some(meal => tags.includes(meal));
+                    if (!matchesMeal) showRecipe = false;
+                }
+
+                // Filter by difficulty
+                if (selectedDifficulties.length > 0) {
+                    const matchesDifficulty = selectedDifficulties.some(diff => metaText.includes(diff));
+                    if (!matchesDifficulty) showRecipe = false;
+                }
+
+                // Filter by dietary
+                if (selectedDietary.length > 0) {
+                    const matchesDietary = selectedDietary.some(diet => tags.includes(diet));
+                    if (!matchesDietary) showRecipe = false;
+                }
+
+                // Filter by time
+                if (selectedTimes.length > 0) {
+                    const timeMatch = selectedTimes.some(timeRange => {
+                        const timeText = card.querySelector('.recipe-meta').textContent;
+                        const minutes = parseInt(timeText.match(/(\d+)\s*min/)?.[1] || '0');
+                        
+                        if (timeRange === 'under30' && minutes < 30) return true;
+                        if (timeRange === '30to60' && minutes >= 30 && minutes <= 60) return true;
+                        if (timeRange === 'over60' && minutes > 60) return true;
+                        return false;
+                    });
+                    if (!timeMatch) showRecipe = false;
+                }
+
+                // Filter by budget
+                if (selectedBudget.length > 0) {
+                    const matchesBudget = selectedBudget.some(budget => {
+                        const cardBudget = card.dataset.budget;
+                        return cardBudget === budget;
+                    });
+                    if (!matchesBudget) showRecipe = false;
+                }
+
+                card.style.display = showRecipe ? 'block' : 'none';
+            }
+
+            const visibleRecipes = document.querySelectorAll('.recipe-card[style="display: block;"], .recipe-card:not([style*="display: none"])').length;
+            updateResultsCount(visibleRecipes);
+        }
+
+        function getSelectedValues(name) {
+            const checkboxes = document.querySelectorAll(`input[name="${name}"]:checked`);
+            return Array.from(checkboxes).map(cb => cb.value);
+        }
+
+        function updateResultsCount(count) {
+            const header = document.querySelector('.filter-header h2');
+            const totalRecipes = document.querySelectorAll('.recipe-card').length;
+            
+            if (count === totalRecipes) {
+                header.textContent = `Holiday Recipes (${totalRecipes})`;
+            } else {
+                header.textContent = `Holiday Recipes (${count} of ${totalRecipes})`;
+            }
+        }
+
+        async function loadRecipeRatings() {
+            const recipeCards = document.querySelectorAll('.recipe-card');
+            
+            for (const card of recipeCards) {
+                const recipeId = getRecipeIdFromCard(card);
+                if (!recipeId) continue;
+                
+                try {
+                    const data = await getRatingForRecipe(recipeId);
+                    
+                    if (data.total > 0) {
+                        const ratingDisplay = card.querySelector('.rating-display');
+                        if (ratingDisplay) {
+                            ratingDisplay.textContent = `⭐ ${data.average.toFixed(1)} (${data.total})`;
+                        }
+                    }
+                } catch (error) {
+                    console.log(`Error loading rating for ${recipeId}:`, error);
+                }
+            }
+        }
+
+        document.querySelectorAll('.filter-option input').forEach(checkbox => {
+            checkbox.addEventListener('change', filterRecipes);
+        });
+
+        document.addEventListener('DOMContentLoaded', async function() {
+            const totalRecipes = document.querySelectorAll('.recipe-card').length;
+            document.querySelector('.filter-header h2').textContent = `Holiday Recipes (${totalRecipes})`;
+            
+            await loadRecipeRatings();
+            applyURLFilters();
+        });
+
+        function applyURLFilters() {
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            const holiday = urlParams.get('holiday');
+            if (holiday) {
+                const holidayCheckbox = document.getElementById(holiday);
+                if (holidayCheckbox) {
+                    holidayCheckbox.checked = true;
+                }
+            }
+            
+            const meal = urlParams.get('meal');
+            if (meal) {
+                const mealCheckbox = document.getElementById(meal);
+                if (mealCheckbox) {
+                    mealCheckbox.checked = true;
+                }
+            }
+            
+            if (holiday || meal) {
+                filterRecipes();
+            }
+        }
+    </script>
+<script src="home-btn-menu.js"></script>     
     <footer>
         <small>
-            <i>Copyright &copy; 2025 Hungry&Broke</i>
+            <i>
+                Copyright &copy; 2025 Hungry&Broke
+            </i>
         </small>
     </footer>
-    <script src="filter-script.js"></script>
-    <script src="home-btn-menu.js"></script>    
 </body>
 </html>
